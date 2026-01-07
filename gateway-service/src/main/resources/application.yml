@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          globalcors:  # Updated prefix
+            cors-configurations:
+              '[/**]':
+                allowed-origins:
+                  - "http://localhost:4200"
+                  - "http://localhost:4201"
+                allowed-headers: "*"
+                allowed-methods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allow-credentials: true
+                max-age: 3600
